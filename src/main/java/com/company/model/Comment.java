@@ -7,30 +7,28 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @Entity
-@Table(name = "articles")
-public class Article {
-
+@Table(name = "comments")
+public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne
-    @JoinColumn (name = "author_id")
-    private User author;
 
-    private String title;
+    @ManyToOne
+    @JoinColumn(name = "article")
+    private Article article;
+
+    @ManyToOne
+    @JoinColumn(name = "author_id")
+    private User author;
 
     private String text;
 
     private LocalDateTime created_at;
-
-    @OneToMany(mappedBy = "article")
-    private List<Comment> commentList;
 }
