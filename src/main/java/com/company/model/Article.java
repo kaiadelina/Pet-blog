@@ -22,14 +22,15 @@ public class Article {
     private int id;
 
     @ManyToOne
-    @JoinColumn (name = "author_id")
+    @JoinColumn(name = "author_id")
     private User author;
 
     private String title;
 
     private String text;
 
-    private LocalDateTime created_at;
+    @Column(insertable = false, name = "created_at")
+    private LocalDateTime createdAt;
 
     @OneToMany(mappedBy = "article")
     private List<Comment> commentList;

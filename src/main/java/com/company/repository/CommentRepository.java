@@ -1,4 +1,4 @@
-package com.company.DAO;
+package com.company.repository;
 
 import com.company.model.Comment;
 import org.springframework.data.jpa.repository.JpaRepository;

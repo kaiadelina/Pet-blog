@@ -1,5 +1,6 @@
 package com.company.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,10 +20,13 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-
     @ManyToOne
-    @JoinColumn(name = "article")
+    @JsonIgnore
+    @JoinColumn(name = "article_id")
     private Article article;
+
+    @Transient
+    private int articleId;
 
     @ManyToOne
     @JoinColumn(name = "author_id")
@@ -30,5 +34,6 @@ public class Comment {
 
     private String text;
 
+    @Column(insertable = false, name = "created_at")
     private LocalDateTime created_at;
 }
