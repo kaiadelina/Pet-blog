@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 public class ArticleService {
     @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
     @Autowired
     private ArticleRepository articleRepository;
 

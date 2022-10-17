@@ -17,7 +17,7 @@ public class CommentService {
     private ArticleRepository articleRepository;
 
     @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
 
     public Comment saveComment(Comment comment) {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();

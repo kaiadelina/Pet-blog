@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @ManyToOne
     @JsonIgnore
@@ -26,7 +26,7 @@ public class Comment {
     private Article article;
 
     @Transient
-    private int articleId;
+    private Integer articleId;
 
     @ManyToOne
     @JoinColumn(name = "author_id")
@@ -35,5 +35,5 @@ public class Comment {
     private String text;
 
     @Column(insertable = false, name = "created_at")
-    private LocalDateTime created_at;
+    private LocalDateTime createdAt;
 }
