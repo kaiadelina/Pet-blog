@@ -4,7 +4,7 @@
 Open command line.<br/>
 
 #### For Linux
-Enter *.\gradlew bootRun*.
+Enter *./gradlew bootRun*.
 
 #### For Windows
 Enter *gradlew bootRun*.
@@ -14,7 +14,7 @@ Enter *gradlew bootRun*.
 ## How to test the project 
 Open command line.<br/>
 #### For Linux
-Enter *.\gradlew test*.
+Enter *./gradlew test*.
 #### For Windows
 Enter *gradlew test*.
 
