@@ -25,14 +25,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
-                .csrf()
-                .disable()
+                .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/registration").not().fullyAuthenticated()
-                .antMatchers("/", "/comments", "/article/*").permitAll()
+                .antMatchers("/**").permitAll()
                 .antMatchers("/addComment", "/addArticle").authenticated()
                 .anyRequest().authenticated()
                 .and().httpBasic();
+
+        httpSecurity.headers().frameOptions().disable();
     }
 
     @Autowired
